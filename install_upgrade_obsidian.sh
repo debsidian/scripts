@@ -309,8 +309,7 @@ if [[ $DESKTOP =~ .*gnome.*|.*kde.*|.*xfce.*|.*mate.*|.*lxqt.*|.*unity.*|.*x-cin
   DATA_HOME=${XDG_DATA_HOME:-~/.local/share}
   DESKTOP_FILE_LOCATION="$DATA_HOME/applications"
 
-  # Use only Wayland. X11 is no longer supported.
-  #IS_WAYLAND_BY_DEFAULT=$(compareVersions "$RELEASE_VERSION" "3.5.6")
+  # Use only Wayland. X11 is not supported.
   #STARTUP_WM_CLASS=Obsidian
   #if [[ $XDG_SESSION_TYPE != "x11" && $IS_WAYLAND_BY_DEFAULT == "1" ]]; then
   STARTUP_WM_CLASS=@obsidian/app-desktop
