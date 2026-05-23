@@ -32,7 +32,7 @@ INSTALL_DIR="${HOME}/.obsidian"   # default installation directory
 
 print() {
   if [[ "${SILENT}" == false ]]; then
-    echo -e "$@"
+    printf '%s\n' "$1"
   fi
 }
 
