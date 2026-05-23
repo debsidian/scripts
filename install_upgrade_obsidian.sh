@@ -21,7 +21,6 @@ if command -v tput >/dev/null 2>&1 && tput setaf 1 >/dev/null 2>&1; then
   COLOR_RED=$(tput setaf 1)
   COLOR_GREEN=$(tput setaf 2)
   COLOR_YELLOW=$(tput setaf 3)
-  COLOR_PURPLE='\033[35m'
   COLOR_RESET=$(tput sgr0)
 fi
 SILENT=false
@@ -37,8 +36,6 @@ print() {
 }
 
 showLogo() {
-  print "${COLOR_PURPLE}"
-  print ""
   print "  /$$$$$$  /$$                 /$$       /$$ /$$"
   print " /$$__  $$| $$                |__/      | $$|__/"
   print "| $$  \ $$| $$$$$$$   /$$$$$$$ /$$  /$$$$$$$ /$$  /$$$$$$  /$$$$$$$"
@@ -49,7 +46,6 @@ showLogo() {
   print " \______/ |_______/ |_______/ |__/ \_______/|__/ \_______/|__/  |__/"
   print ""
   print "Linux Installer and Updater"
-  print "${COLOR_RESET}"
 }
 
 showHelp() {
@@ -357,7 +353,7 @@ echo "$RELEASE_VERSION" > "${INSTALL_DIR}/VERSION"
 #-----------------------------------------------------
 if [[ "$SHOW_CHANGELOG" == true ]]; then
   NOTES=$($DL - https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | grep -Po '"body": "\K.*(?=")')
-  print "${COLOR_PURPLE}Changelog:${COLOR_RESET}\n${NOTES}"
+  print "${COLOR_GREEN}Changelog:${COLOR_RESET}\n${NOTES}"
 fi
 
 #-----------------------------------------------------
